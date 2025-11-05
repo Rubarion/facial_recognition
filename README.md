@@ -1,5 +1,5 @@
 # facial_recognition
-<b>facial_recognition</b> aims to be the most effective face recognition [library]("https://pypi.org/project/facial-recognition/") for python that you can install with a single command
+**facial_recognition** aims to be the most effective face recognition [library](https://pypi.org/project/facial-recognition/) for python that you can install with a single command
 
 
 ```
@@ -40,17 +40,17 @@ facial_recognition remove_faces
 
 # Testing and Accuracy
 
-This package was tested on the **[Labelled Faces in the Wild (LFW Dataset)]("https://www.kaggle.com/datasets/jessicali9530/lfw-dataset?utm_source=chatgpt.com") and a very impressive 74.65% accuracy or 969 faces recognised correctly out of total 1298 was obtained.** (Screenshots of test running in terminal attached below)
+This package was tested on the **[Labelled Faces in the Wild (LFW Dataset)](https://www.kaggle.com/datasets/jessicali9530/lfw-dataset?utm_source=chatgpt.com) and a very impressive 74.65% accuracy or 969 faces recognised correctly out of total 1298 was obtained.** (Screenshots of test running in terminal attached below)
 
-![Test in progress](tests/accuracy/one.png "Adding all faces in LFW to database and running the tests")
+![Test in progress](facial_recognition/tests/accuracy/one.png "Adding all faces in LFW to database and running the tests")
 
-![Test in progress](tests/accuracy/two.png "Test Result")
+![Test in progress](facial_recognition/tests/accuracy/two.png "Test Result")
 
 Why accuarcy is not close to 100% is because the images in this dataset are very small cropped faces as shown in the output images below (where the facial_recognition package correctly recognised Angelina Jolie and Catherine Zeta Jones) and as we are very unlikely to encounter such small cropped close up shots of face images or frames in the real world, it was not worth the effort to tweak the code to obtain >90% accuracy just for this dataset. Basically this test proves that both fo normal images of persons as well as for very small images like this, the package does very very well in correctly identifying the faces.
 
-![Output Images](tests/accuracy/four.jpg "Angelina Jolie")
+![Output Images](facial_recognition/tests/accuracy/four.jpg "Angelina Jolie")
 
-![Output Images](tests/accuracy/three.jpg "Catherine Zeta Jones")
+![Output Images](facial_recognition/tests/accuracy/three.jpg "Catherine Zeta Jones")
 
 
 **Please note in case of any bugs that this library will be updated frequently**
