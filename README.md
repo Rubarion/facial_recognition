@@ -230,7 +230,7 @@ Testing my webcam feed using this photo of mine
 *Input*
 
 
-![Output1](facial_recognition/tests/tomleonard/output/mywebcam.png "Output image")
+![Output1](facial_recognition/tests/tomleonard/output/mywebcam4.png "Output image")
 
 
 *Output Video Feed*
