@@ -11,19 +11,24 @@ def main():
         description="facial_recognition CLI Tool — Add, recognize, or remove faces"
     )
     subparsers = parser.add_subparsers(dest="command")
+    
+    # --- Subcommand: setup ---
+    setup_parser = subparsers.add_parser(
+        "setup",
+        help="Download or verify the ArcFace model"
+    )
 
     # --- Subcommand: add_faces ---
     add_parser = subparsers.add_parser(
         "add_faces",
         help="Add all faces from the current folder to the database"
     )
+    
     add_parser.add_argument(
-        "--threshold",
-        type=float,
-        default=0.3,
-        help="Cosine similarity threshold for adding faces (default: 0.3)"
+    "--folder",
+    default=os.getcwd(),
+    help="Path to folder containing face images (default: current directory)"
     )
-
     # --- Subcommand: recognize ---
     rec_parser = subparsers.add_parser(
         "recognize",
@@ -58,8 +63,8 @@ def main():
     if args.command == "setup":
         setup_model_main()  # ✅ Calls your setup_model.py:main()
 
-    if args.command == "add_faces":
-        folder = os.getcwd()
+    elif args.command == "add_faces":
+        folder = args.folder if hasattr(args, "folder") else os.getcwd()
         add_faces_from_folder(folder)
 
     elif args.command == "recognize":

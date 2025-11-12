@@ -21,6 +21,19 @@
 
 
 
+---
+
+## 🚀 Unique Features  
+
+✅ **Works the same on all Operating systems be it Windows,Linux or Mac and also installs the same on all** 
+✅ **Works the same on CPU and GPUs. Instantaneous face recognition on simple CPUs** 
+✅ **Works on its own and doesn't require the installation of any other libraries** 
+✅ **Images can be passed as either files or as arrays and therefore very easy to use on existing large         databases of images of people**
+
+---
+
+
+
 # Installation
 
 
@@ -47,10 +60,6 @@ Or visit https://huggingface.co/Rubarion/facial_recognition_model/tree/main and 
 (The model file is a single file of around 130Mb in size. Currently this has to be downloaded serparately as pypi has a limit of 100Mb for the total pacakage size. If and when pypi allows me to bundle the model file along with the code, you will only need to run `pip install facial_recognition`)
 
 
-**Works the same on all Operating systems be it Windows,Linux or Mac and also installs the same on all**
-
-
-**Works the same on CPU and GPUs. Instantaneous face recognition on simple CPUs**
 
 
 
@@ -117,6 +126,8 @@ add_person("Leonardo","leonardo.png")
 
 *Accepts both jpg as well as png images*
 
+
+**Images need not be in the form of files, it can also be in the form of arrays like how they are stored in LFW and other databases of faces of people. Refer these lines of code in [testingscript.py ](https://github.com/Rubarion/facial_recognition/blob/488b2f5f6f09f499f1a96a3b215226099ec16f2a/facial_recognition/tests/testingscript.py#L12-L19) used for testing the images in Labelled Faces in the Wild(LFW) Dataset.**
 
 
 Or in the most easiest way, you can use the add_faces_from_folder function to add all faces in a folder with the names of image files being the names of the people you want recognised. For eg if image file name is leonardo1.png, then the person's name will be taken as leonardo1 and that itself will be marked in the output image. If you are running the script from the same folder as the images, then there is no need to give any arguments to the function.
