@@ -25,7 +25,7 @@
 
 ## 🚀 Unique Features  
 
-✅ **Works the same on all Operating systems be it Windows,Linux or Mac and also installs the same on all**
+✅ **Works the same on all Operating systems be it Windows,Linux or Mac and also installs the same on all**  
 ✅ **Has the highest possible accuracy of 86.17% on the massive CelebA dataset**   
 ✅ **Works the same on CPU and GPUs. Instantaneous face recognition on simple CPUs**   
 ✅ **Works on its own and doesn't require the installation of any other libraries**   
@@ -273,20 +273,20 @@ save_output and so you can set `recognize_image("test1.jpg",save_output=False)` 
 
 # Testing and Accuracy
 
-This package was tested on the very popular **[CelebA dataset](https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html) and the highest possible accuracy of 86.17% or 165807 faces correctly recognized out of total 192422 was obtained.**(Screenshot of test running in terminal attached below). Code used for testing is given [here](https://github.com/Rubarion/facial_recognition/blob/facial_recognition/tests/testingScriptCelebA_threaded.py)
+This package was tested on the very popular **[CelebA dataset](https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html) and the highest possible accuracy of 86.17% or 165807 faces correctly recognized out of total 192422 was obtained.**(Screenshot of test running in terminal attached below). Code used for testing is given [here](https://github.com/SREEHARI1994/facial_recognition/blob/cd4fdc075a4d13d57315f0c9a06cbf2a9f66b953/facial_recognition/tests/testingScriptCelebA_threaded.py)
 
 ![Test Results](facial_recognition/tests/accuracy/celeb1.png "Testing on just CPU")
 
 Testing done On Visual Studio Code Using just CPU
 
-In case you are wondering why the accuracy is not close to 100% or even above 90%, an explanation of the same is given [here](https://github.com/Rubarion/facial_recognition/blob/facial_recognition/tests/accuracy/accuracyExplanation.md) as answered by ChatGPT.
+In case you are wondering why the accuracy is not close to 100% or even above 90%, an explanation of the same is given [here](https://github.com/SREEHARI1994/facial_recognition/blob/cd4fdc075a4d13d57315f0c9a06cbf2a9f66b953/facial_recognition/tests/accuracy/accuracyExplanation.md) as answered by ChatGPT.
 
 
 
 
 
 
-This package was tested on the **[Labelled Faces in the Wild (LFW Dataset)](https://www.kaggle.com/datasets/jessicali9530/lfw-dataset?utm_source=chatgpt.com) and a very impressive 74.65% accuracy or 969 faces recognised correctly out of total 1298 was obtained.** (Screenshots of test running in terminal attached below)
+This package was also tested on the **[Labelled Faces in the Wild (LFW Dataset)](https://www.kaggle.com/datasets/jessicali9530/lfw-dataset?utm_source=chatgpt.com) and a very impressive 74.65% accuracy or 969 faces recognised correctly out of total 1298 was obtained.** (Screenshots of test running in terminal attached below)
 
 ![Test in progress](facial_recognition/tests/accuracy/one.png "Adding all faces in LFW to database and running the tests")
 

@@ -43,8 +43,8 @@ def fixed_crop(img):
 # ============================================================
 # 4️⃣ Dataset paths
 # ============================================================
-DATASET = r"D:\MyCompanySTuff\facialRecognition\testing\celebA\extracted\img_align_celeba"
-IDENTITY_FILE = r"D:\MyCompanySTuff\facialRecognition\testing\celebA\identity_CelebA.txt"
+DATASET = r"Path to the extracted folder img_align_celeba containing the image files"
+IDENTITY_FILE = r"Path to the text file identity_CelebA.txt that comes along with this dataset"
 
 # ============================================================
 # 5️⃣ Load id → list_of_images
