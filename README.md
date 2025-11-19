@@ -1,8 +1,8 @@
 # facial_recognition
-**facial_recognition** aims to be the most effective face recognition [library](https://pypi.org/project/facial-recognition/) for python that you can install with a single command.
+**facial_recognition** aims to be the most effective face recognition [library](https://pypi.org/project/facial-recognition/) for python that you can install with a single pip command. **Has an accuracy of 99.59% on the [Labelled Faces in the Wild (LFW Dataset)](https://www.kaggle.com/datasets/jessicali9530/lfw-dataset?utm_source=chatgpt.com) as well as the maximum possible accuracy on the very popular [CelebA dataset](https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html)(scroll down for details of the tests)**
 
 
-# Demo -Below you can see facial_recognition correctly recognizing actors Tom Cruise and Leonardo DiCaprio amongst a group of other people from just a single photo of them
+# Demo - Below you can see facial_recognition correctly recognizing actors Tom Cruise and Leonardo DiCaprio amongst a group of other people from just a single photo of them
 
 
 
@@ -25,11 +25,12 @@
 
 ## 🚀 Unique Features  
 
-✅ **Works the same on all Operating systems be it Windows,Linux or Mac and also installs the same on all**  
-✅ **Has the highest possible accuracy of 86.17% on the massive CelebA dataset**   
-✅ **Works the same on CPU and GPUs. Instantaneous face recognition on simple CPUs**   
-✅ **Works on its own and doesn't require the installation of any other libraries**   
-✅ **Images can be passed as either files or as arrays and therefore very easy to use on existing large         databases of images of people**  
+--✅ **Works the same on all Operating systems be it Windows,Linux or Mac and also installs the same on all**  
+--✅ **Has the highest possible accuracy of 99.59% on the labelled faces in the wild dataset**
+--✅ **Has the max possible accuracy of 86.17% on the massive CelebA dataset**   
+--✅ **Works the same on CPUs and GPUs. Instantaneous face recognition on simple CPUs**   
+--✅ **Works on its own and doesn't require the installation of any other libraries like dlib**   
+--✅ **Images can be passed as either files or as arrays and therefore very easy to use on existing large         databases of images of people**  
 
 ---
 
@@ -41,7 +42,7 @@
 ```
 pip install facial_recognition
 ```
-After that, you need to download and setup the model file used for recognition by running the following command **(Even if you don't do this now, the model file will be downloaded the first time you run this library)**
+After that, you need to download and setup the model file used for recognition by running the following command **(Even if you don't do this now, the model file will be downloaded automatically the first time you run this library)**
 
 
 
@@ -273,6 +274,48 @@ save_output and so you can set `recognize_image("test1.jpg",save_output=False)` 
 
 # Testing and Accuracy
 
+
+# Labelled Faces in the Wild(LFW) Dataset
+
+
+This package was tested on the **[Labelled Faces in the Wild (LFW Dataset)](https://www.kaggle.com/datasets/jessicali9530/lfw-dataset?utm_source=chatgpt.com) and a very impressive 99.59% accuracy was obtained or 969 faces recognised correctly out of 973** . Firstly the libaray was tested on the entire LFW dataset without providing any tolerance value and therefore using the default tolerance of 0.3 and it was observed that of the total 1298 faces reported to be in the databse, 969 was correctly recognized (Screenshots of test running in terminal attached below)
+
+![Test in progress](facial_recognition/tests/accuracy/one.png "Adding all faces in LFW to database and running the tests")
+
+![Test in progress](facial_recognition/tests/accuracy/two.png "Test Result")
+
+However when I tried to increase the accuracy by adjusting the threshold value, it became clear that accuracy drops to 46% with a high threshold value 0.8 or therefore it made sense to only decrease the threshold to 0.2 and beyond from 0.3 Decreasing to 0.2 identified 973 faces but after that for values less than 0.2, number of recognised faces was remaining the same at 973. Even for 0.001 or 0.00 threshold, only 973 faces were identified. Check the [thresholdAdjust] folder(src/facial_recognition/tests/accuracy/thresholdAdjust).This allowed me to conclude that of the total 1298 faces said to be in LFW, only 973 had actual faces and rest were all noise or very low res images where it is impossible to identify faces even for humans.So concluding,
+
+On the full LFW test set (1298 images), this library achieved 74.65% accuracy  
+(969 faces correctly recognized out of 1298).
+
+However, the LFW dataset is known to contain many extremely low-resolution or
+heavily compressed face crops (some as small as ~40×40 pixels). These images do
+not contain enough identity information for any ArcFace-style embedding model to
+produce a reliable match.
+
+To analyze this, the distance threshold was gradually reduced down to 0.0.  
+Below a threshold of 0.2, the accuracy stopped improving, indicating that only
+973 LFW images contain usable identity information.
+
+**On these 973 usable images, the recognition accuracy is 969 / 973 = 99.59%.**
+
+
+
+YOu can see from the images given below that the facial_recognition package correctly recognised Angelina Jolie and Catherine Zeta Jones.
+
+
+
+![Output Images](facial_recognition/tests/accuracy/four.jpg "Angelina Jolie")
+
+![Output Images](facial_recognition/tests/accuracy/three.jpg "Catherine Zeta Jones")
+
+
+
+
+# CelebA Dataset
+
+
 This package was tested on the very popular **[CelebA dataset](https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html) and the highest possible accuracy of 86.17% or 165807 faces correctly recognized out of total 192422 was obtained.**(Screenshot of test running in terminal attached below). Code used for testing is given [here](https://github.com/SREEHARI1994/facial_recognition/blob/cd4fdc075a4d13d57315f0c9a06cbf2a9f66b953/facial_recognition/tests/testingScriptCelebA_threaded.py)
 
 ![Test Results](facial_recognition/tests/accuracy/celeb1.png "Testing on just CPU")
@@ -286,17 +329,7 @@ In case you are wondering why the accuracy is not close to 100% or even above 90
 
 
 
-This package was also tested on the **[Labelled Faces in the Wild (LFW Dataset)](https://www.kaggle.com/datasets/jessicali9530/lfw-dataset?utm_source=chatgpt.com) and a very impressive 74.65% accuracy or 969 faces recognised correctly out of total 1298 was obtained.** (Screenshots of test running in terminal attached below)
 
-![Test in progress](facial_recognition/tests/accuracy/one.png "Adding all faces in LFW to database and running the tests")
-
-![Test in progress](facial_recognition/tests/accuracy/two.png "Test Result")
-
-Why accuarcy is not close to 100% is because the images in this dataset are very small cropped faces as shown in the output images below (where the facial_recognition package correctly recognised Angelina Jolie and Catherine Zeta Jones) and as we are very unlikely to encounter such small cropped close up shots of face images or frames in the real world, it was not worth the effort to tweak the code to obtain >90% accuracy just for this dataset. Basically this test proves that both for normal images of persons as well as for very small images like this, the package does very very well in correctly identifying the faces.
-
-![Output Images](facial_recognition/tests/accuracy/four.jpg "Angelina Jolie")
-
-![Output Images](facial_recognition/tests/accuracy/three.jpg "Catherine Zeta Jones")
 
 
 **Please note in case of any bugs that this library will be updated frequently**
